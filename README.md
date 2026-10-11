@@ -1,4 +1,4 @@
-# Problem 2.12: SDK Documentation Agent
+# Problem 2.12: Github Documentation
 
 ## Submission instructions
 
