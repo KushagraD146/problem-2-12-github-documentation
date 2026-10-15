@@ -1,19 +1,12 @@
-# Fill this in before you submit -- our evaluator runs these commands
-# EXACTLY as written, in this order, from a fresh checkout of your fork.
-# Keep every command non-interactive (no prompts) and idempotent.
-
+# Evaluator executes these commands in order from a fresh checkout.
 setup_commands:
-  - "pip install -r requirements.txt"
-  # - add every other setup step here, in order (env vars, downloads, etc.)
+  - "python -m pip install -r requirements.txt"
 
 run_commands:
   - "python src/main.py --help"
-  # - the real command(s) that actually run your solution
+  - "python src/main.py --demo --repo examples/sample_repo --output build/demo-report.md"
 
-test_commands: []
-  # optional -- commands that run your own tests/checks, if you have any
+test_commands:
+  - "python -m unittest discover -s tests -v"
 
-notes: ""
-  # anything we should know before running this (e.g. "needs a GPU",
-  # "takes about 10 minutes", "expects a sample dataset already present
-  # under data/, see docs/ for where to get it")
+notes: "Python 3.10+. Default mode is deterministic and needs no network, model credentials, or external services. See docs/README.md for optional Claude CLI review and real Git-ref comparison."
